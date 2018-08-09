@@ -1,0 +1,32 @@
+{
+	"name": "neogame",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@cityofzion/neon-js": "^3.9.2",
+		"babel-plugin-transform-async-to-generator": "^6.24.1",
+		"bignumber.js": "^7.2.1",
+		"body-parser": "^1.18.3",
+		"classnames": "^2.2.6",
+		"express": "^4.16.3",
+		"lodash": "^4.17.10",
+		"prop-types": "^15.6.2",
+		"randomstring": "^1.1.5",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1",
+		"react-materialize": "^2.3.3",
+		"react-recaptcha": "^2.3.10",
+		"react-router": "^4.3.1",
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "1.1.4",
+		"rodal": "^1.6.3"
+	},
+	"proxy": "http://localhost:8080",
+	"scripts": {
+		"server": "node server.js",
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	}
+}
