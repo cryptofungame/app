@@ -1,4 +1,4 @@
 const config = {
-	baseURL: ""
+	baseURL: "https://api.cryptofun.game/"
 };
 export default config;

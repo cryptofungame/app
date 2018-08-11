@@ -33,7 +33,7 @@ class Home extends Component {
 
 	GetUserQuestions = token => {
 		this.setState({ Loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/user-questions`, {
+		fetch(`${config.baseURL}api/v1/user-questions`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -60,7 +60,7 @@ class Home extends Component {
 		if (this.state.Loader === true) {
 			return <Spinner />;
 		}
-		const phase1 = colors.gradientList("#BAC8FF", "#4263EB", 6);
+		const phase1 = colors.gradientList("#BAC8FF", "#4263EB", 100);
 		const AllLevel = this.state.UserQuestionsArray.map(level => {
 			const ConditionalLink = level.level_status === "3" ? Route : Link;
 			return (

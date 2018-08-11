@@ -7,6 +7,7 @@ import Login from "./components/Login.js";
 import Home from "./components/Home.js";
 import Game from "./components/Game.js";
 import Explore from "./components/Explore.js";
+import Index from "./components/Index.js";
 
 class App extends Component {
 	render() {
@@ -14,13 +15,14 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route
+					<Route path="/" exact component={Index} />
+					{/* <Route
 						path="/"
 						exact
 						render={({ match }) =>
-							UserObject == null ? <Redirect to="/login" /> : <Redirect to="/home" />
+							UserObject == null ? <Explore /> : <Redirect to="/home" />
 						}
-					/>
+					/> */}
 
 					<Route path="/login" component={Login} exact />
 					<Route path="/g/:id" component={Game} />

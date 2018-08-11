@@ -55,7 +55,7 @@ class Header extends Component {
 	};
 
 	GetPackages = () => {
-		fetch(`${config.baseURL}/neo-game/public/api/v1/plans`, {
+		fetch(`${config.baseURL}api/v1/plans`, {
 			method: "GET"
 		})
 			.then(response => response.json())

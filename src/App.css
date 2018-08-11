@@ -838,3 +838,29 @@ ul#dropdown_1 {
 .successAnswer p {
 	text-align: left;
 }
+
+.socials {
+	text-align: center;
+}
+
+.socials a {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0.5rem;
+}
+
+.startGame {
+	text-align: center;
+	display: table;
+	color: rgb(255, 255, 255);
+	padding: 12px 16px;
+	background: #59a44f;
+	margin: 2rem auto;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	transition: 0.2s ease-in-out;
+}
+
+.startGame:hover {
+	background: #32632b;
+}

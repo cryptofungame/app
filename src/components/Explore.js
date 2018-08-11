@@ -19,7 +19,7 @@ export default class Explore extends Component {
 
 	GetLeaderboardData = () => {
 		this.setState({ loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/users`, {
+		fetch(`${config.baseURL}api/v1/users`, {
 			method: "GET"
 		})
 			.then(response => response.json())
@@ -39,7 +39,7 @@ export default class Explore extends Component {
 		const address = this.refs.searchbox.value;
 		if (address) {
 			this.setState({ loader: true });
-			fetch(`${config.baseURL}/neo-game/public/api/v1/search?address=${address}`, {
+			fetch(`${config.baseURL}api/v1/search?address=${address}`, {
 				method: "GET"
 			})
 				.then(response => response.json())

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Row, Input, Col } from "react-materialize";
 import { setCreditValue } from "./Credit";
 import Spinner from "./Spinner";
-import Logo from "../Images/logo.svg";
+import Logo from "../Images/logo-green.svg";
 import login from "../Images/login.svg";
 import config from "../common/config";
 class Login extends Component {
@@ -29,7 +29,8 @@ class Login extends Component {
 		if (this.state.PrivateKey !== "") {
 			this.setState({ Loader: true });
 			// console.log(this.state.PrivateKey);
-			fetch(`${config.baseURL}/neo-game/public/api/v1/login`, {
+
+			fetch(`${config.baseURL}api/v1/login`, {
 				method: "POST",
 				headers: {
 					Accept: "application/json",
@@ -82,7 +83,7 @@ class Login extends Component {
 
 	Register = () => {
 		this.setState({ Loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/register`, {
+		fetch(`${config.baseURL}api/v1/register`, {
 			method: "GET"
 		})
 			.then(response => response.json())

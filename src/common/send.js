@@ -48,7 +48,7 @@ async function fetchAsync(hash) {
 	const user = JSON.parse(localStorage.getItem("User"));
 
 	try {
-		const response = await fetch(`${config.baseURL}/neo-game/public/api/v1/transaction`, {
+		const response = await fetch(`${config.baseURL}api/v1/transaction`, {
 			method: "POST",
 			headers: {
 				Accept: "application/json",

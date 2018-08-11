@@ -76,7 +76,7 @@ class Game extends Component {
 
 	GetQuestionDetail = (token, slug) => {
 		this.setState({ Loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/user-questions/${slug}`, {
+		fetch(`${config.baseURL}api/v1/user-questions/${slug}`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -101,7 +101,7 @@ class Game extends Component {
 
 	ShowHint = () => {
 		this.setState({ Loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/show-hint/${this.state.QuestionSlug}`, {
+		fetch(`${config.baseURL}api/v1/show-hint/${this.state.QuestionSlug}`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -139,7 +139,7 @@ class Game extends Component {
 
 	ShowAnswer = () => {
 		this.setState({ Loader: true });
-		fetch(`${config.baseURL}/neo-game/public/api/v1/show-answer/${this.state.QuestionSlug}`, {
+		fetch(`${config.baseURL}api/v1/show-answer/${this.state.QuestionSlug}`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -198,7 +198,7 @@ class Game extends Component {
 		// console.log(values);
 		if (values.length === this.state.inputSize) {
 			this.setState({ ButtonLoader: true });
-			fetch(`${config.baseURL}/neo-game/public/api/v1/answer/${this.state.QuestionSlug}`, {
+			fetch(`${config.baseURL}api/v1/answer/${this.state.QuestionSlug}`, {
 				method: "POST",
 				headers: {
 					Accept: "application/json",
