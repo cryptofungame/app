@@ -147,7 +147,7 @@ class Header extends Component {
 	SetPackageArray = packages => {
 		this.setState({
 			PackageArray: packages,
-			PackagesPlaceHolder: `${packages.coins} COINS — ${
+			PackagesPlaceHolder: `${packages.coins} TOKEN — ${
 				packages.amount
 			} ${packages.type.toUpperCase()}`
 		});
@@ -160,7 +160,7 @@ class Header extends Component {
 				<div key={packages.id} onClick={this.SetPackageArray.bind(this, packages)}>
 					<li>
 						<span>
-							{packages.coins} COINS — {packages.amount} {packages.type.toUpperCase()}
+							{packages.coins} TOKEN — {packages.amount} {packages.type.toUpperCase()}
 						</span>
 					</li>
 					<NavItem divider />
@@ -204,12 +204,12 @@ class Header extends Component {
 					<Col s={12} l={6} m={5} className="HeaderRightSection NonPadding">
 						<Credit />
 						<Modal
-							header="BUY COINS"
+							header="BUY TOKENS"
 							className="BuyCoinDisplay"
 							trigger={
 								<a className="BuyCoinButton RobotoMedium">
 									<img src={Bag} className="BagIcon" />
-									BUY COINS
+									BUY TOKENS
 								</a>
 							}
 							actions={
@@ -222,7 +222,7 @@ class Header extends Component {
 											className="BuyCoinButton RobotoMedium"
 										>
 											<img src={Bag} className="BagIcon" />
-											BUY COINS
+											BUY TOKENS
 										</Button>
 									)}
 									<Button

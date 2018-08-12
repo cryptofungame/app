@@ -19,7 +19,8 @@ export default class Credit extends Component {
 			<React.Fragment>
 				<img src={Coins} className="BagIcon" alt="Encrypted" />
 				<p className="RobotoMonoRegular ProfilesDetailText">
-					COINS:<br />
+					TOKENS:
+					<br />
 					<span>{this.state.current}</span>
 				</p>
 			</React.Fragment>

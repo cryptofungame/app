@@ -307,7 +307,7 @@ class Game extends Component {
 										{/* <Captcha /> */}
 									</Modal>
 									<p className="GameNavbarButtonDescription RobotoItalic">
-										- 10 coins
+										- 10 TOKENS
 									</p>
 								</div>
 								<div className="test">
@@ -342,11 +342,11 @@ class Game extends Component {
 									>
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
-											<Badge className="badge red">-20 coins</Badge>
+											<Badge className="badge red">-20 TOKENS</Badge>
 										</p>
 									</Modal>
 									<p className="GameNavbarButtonDescription RobotoItalic">
-										- 20 coins
+										- 20 TOKENS
 									</p>
 								</div>
 							</Col>
