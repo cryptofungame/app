@@ -179,6 +179,7 @@ class Game extends Component {
 		const UserObject = JSON.parse(localStorage.getItem("User"));
 		const { match } = this.props;
 		const slugId = match.params.id;
+		// console.log(this.props.history);
 		if (UserObject !== null) {
 			this.setState({ UserFound: true });
 			this.setState({ UserArray: UserObject, QuestionSlug: slugId });
@@ -301,7 +302,7 @@ class Game extends Component {
 									>
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
-											<Badge className="new badge red">-10 coins</Badge>
+											<Badge className="badge red">-10 coins</Badge>
 										</p>
 										{/* <Captcha /> */}
 									</Modal>
@@ -341,7 +342,7 @@ class Game extends Component {
 									>
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
-											<Badge className="new badge red">-20 coins</Badge>
+											<Badge className="badge red">-20 coins</Badge>
 										</p>
 									</Modal>
 									<p className="GameNavbarButtonDescription RobotoItalic">
@@ -384,18 +385,27 @@ class Game extends Component {
 						className="BuyCoinDisplay"
 						actions={
 							<div>
-								<Button
-									flat
-									waves="light"
-									onClick={() =>
-										this.props.history.push(
-											`/g/${this.state.showModal.message}`
-										)
-									}
-									className="BuyCoinButton RobotoMedium"
-								>
-									NEXT →
-								</Button>
+								{this.state.showModal.slug && (
+									<Button
+										flat
+										waves="light"
+										onClick={() =>
+											// this.props.history.replace(
+											// 	`/g/${this.state.showModal.slug}`
+											// )
+											(window.location.href = `/g/${
+												this.state.showModal.slug
+											}`)
+										}
+										// to={{
+										// 	pathname: "/g/",
+										// 	search: this.state.showModal.slug
+										// }}
+										className="BuyCoinButton RobotoMedium"
+									>
+										NEXT →
+									</Button>
+								)}
 								<Button
 									modal="close"
 									flat

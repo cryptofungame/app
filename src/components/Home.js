@@ -59,7 +59,7 @@ class Home extends Component {
 		if (this.state.Loader === true) {
 			return <Spinner />;
 		}
-		const phase1 = colors.gradientList("#4263EB", "#4caf50", 80);
+		const phase1 = colors.gradientList("#be82dc", "#4caf50", 80);
 		const AllLevel = this.state.UserQuestionsArray.map(level => {
 			const ConditionalLink = level.level_status === "3" ? Route : Link;
 			return (

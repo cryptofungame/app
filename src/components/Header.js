@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { api } from "@cityofzion/neon-js";
 import BigNumber from "bignumber.js";
 import { Col, Modal, Button, Row, Preloader, Dropdown, NavItem } from "react-materialize";
@@ -172,7 +172,9 @@ class Header extends Component {
 			<Row>
 				<Col m={12} l={12} className="HeaderSectionsContainer">
 					<Col s={12} l={6} m={7} className="HeaderLeftSection NonPadding">
-						<img src={NEOICON} alt="NEO" className="ProfilePicture" />
+						<Link to="/home">
+							<img src={NEOICON} alt="NEO" className="ProfilePicture" />
+						</Link>
 						{/* <img
 							src={`${this.state.UserArray.avatar}`}
 							alt="avatar"

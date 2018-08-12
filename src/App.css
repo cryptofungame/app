@@ -876,3 +876,10 @@ ul#dropdown_1 {
 .successModal {
 	text-align: center;
 }
+
+.ModalHeader .badge {
+	color: #FFF;
+	padding: 2px 8px;
+	border-radius: 2px;
+	height: auto;
+}
