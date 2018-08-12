@@ -35,6 +35,7 @@ class Header extends Component {
 
 	Logout = () => {
 		localStorage.removeItem("User");
+		localStorage.removeItem("Credit");
 		this.props.history.push("/login");
 	};
 
@@ -271,7 +272,7 @@ class Header extends Component {
 										<br />
 										<a
 											target="_blank"
-											href={`https://neoscan.io/transaction/${
+											href={`https://neotracker.io/search/${
 												this.state.refId
 											}`}
 											style={{ wordBreak: "break-all" }}

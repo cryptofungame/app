@@ -3,7 +3,7 @@ import { Row } from "react-materialize";
 import Spinner from "./Spinner.js";
 import config from "../common/config.js";
 
-export default class Explore extends Component {
+export default class Explorer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -46,9 +46,12 @@ export default class Explore extends Component {
 				.then(json => {
 					this.setState({
 						loader: false,
-						users: json
+						users: {
+							result: [json]
+						}
 					});
-					if (!json.result) {
+					// console.log(json);
+					if (json.error) {
 						window.Materialize.toast("Address not found!", 3000, "red");
 					}
 				})
@@ -92,7 +95,7 @@ export default class Explore extends Component {
 		return (
 			<main className="MainBody" style={{ paddingTop: "5vh" }}>
 				<div className="container">
-					<h2>Explore</h2>
+					<h2>Explorer</h2>
 					<Row>
 						<form onSubmit={this.GetUserFromAddress}>
 							<div className="input-field col s6">

@@ -27,7 +27,7 @@ class App extends Component {
 					{/* <Route path="/login" component={Login} exact /> */}
 					<Route path="/g/:id" component={Game} />
 					<Route path="/home" component={Home} />
-					<Route path="/explore" component={Explore} />
+					<Route path="/explorer" component={Explore} />
 					<Route
 						nomatch
 						render={({ location }) => {

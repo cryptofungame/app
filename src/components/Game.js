@@ -302,12 +302,14 @@ class Game extends Component {
 									>
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
-											<Badge className="badge red">-10 coins</Badge>
+											<Badge className="badge red">
+												-{this.state.questionArray.hint_token} TOKENS
+											</Badge>
 										</p>
 										{/* <Captcha /> */}
 									</Modal>
 									<p className="GameNavbarButtonDescription RobotoItalic">
-										- 10 TOKENS
+										-{this.state.questionArray.hint_token} TOKENS
 									</p>
 								</div>
 								<div className="test">
@@ -342,11 +344,13 @@ class Game extends Component {
 									>
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
-											<Badge className="badge red">-20 TOKENS</Badge>
+											<Badge className="badge red">
+												-{this.state.questionArray.hint_token} TOKENS
+											</Badge>
 										</p>
 									</Modal>
 									<p className="GameNavbarButtonDescription RobotoItalic">
-										- 20 TOKENS
+										-{this.state.questionArray.show_token} TOKENS
 									</p>
 								</div>
 							</Col>

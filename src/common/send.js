@@ -3,7 +3,7 @@ import randomstring from "randomstring";
 import config from "./config";
 
 export default async function Send({
-	toAd = "Kx5Jg9cPGyw8agZ7b14QjKJbtiaod3JcYQxiw6XJZDP5bsGeAFuT",
+	toAd = "AN8cdwvqSzFjDxpftoQsz2xNuh7N27ChCk",
 	fromAd,
 	fromPK,
 	value = {}

@@ -17,7 +17,7 @@ export default class Index extends Component {
 					<div className="nav-wrapper" style={{ backgroundColor: "transparent" }}>
 						<ul id="nav-mobile" className="right">
 							<li>
-								<Link to="/explore">Explore</Link>
+								<Link to="/explorer">Explorer</Link>
 							</li>
 						</ul>
 					</div>
@@ -28,7 +28,7 @@ export default class Index extends Component {
 						<p className="BaseText">
 							Cryptofun allows you to increase and challenge your blockchain
 							knowledge, You have to guess the word correctly at each step using the
-							image's . This word's can include the name of a coin's Or exchanges or
+							images. This words can include the name of a coin's, exchanges or
 							expression in cryptos!
 							<br />
 							<b>Let's challenge....</b>
@@ -37,7 +37,11 @@ export default class Index extends Component {
 							START GAME
 						</Link>
 						<div className="socials">
-							<a href="https://github.com/cryptofungame" target="_blank">
+							<a
+								href="https://github.com/cryptofungame"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width={24}
@@ -50,7 +54,11 @@ export default class Index extends Component {
 									/>
 								</svg>
 							</a>
-							<a href="https://twitter.com/cryptofungame" target="_blank">
+							<a
+								href="https://twitter.com/cryptofungame"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<svg xmlns="http://www.w3.org/2000/svg" width={21} height={18}>
 									<g fill="none" fillRule="evenodd">
 										<path d="M-3-3h24v24H-3z" />
@@ -62,7 +70,11 @@ export default class Index extends Component {
 									</g>
 								</svg>
 							</a>
-							<a href="https://t.me/cryptofungame" target="_blank">
+							<a
+								href="https://t.me/cryptofungame"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24}>
 									<g fill="#1C9FE0" fillRule="nonzero">
 										<path d="M0 22.1961C0 23.1924.8054 24 1.8039 24h20.3922C23.1924 24 24 23.1946 24 22.1961V1.8039C24 .8076 23.1946 0 22.1961 0H1.8039C.8076 0 0 .8054 0 1.8039v20.3922zM19.344 5.6757l-2.5716 13.1752c-.0605.311-.403.452-.6446.265l-3.5104-2.7146c-.2131-.1649-.5037-.1561-.7077.021l-1.9463 1.69c-.2259.1967-.5663.087-.6528-.2092l-1.3514-4.6295-3.4915-1.388c-.3547-.1415-.3578-.6748-.004-.82l14.3293-5.888c.3038-.1251.6172.1583.551.4981z" />
