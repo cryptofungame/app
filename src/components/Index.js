@@ -26,13 +26,12 @@ export default class Index extends Component {
 					<div className="LoginBoxContainer">
 						<img src={Logo} className="BaseLogo" alt="Logo" />
 						<p className="BaseText">
-							Praesent vulputate libero vel urna ullamcorper consectetur. Nam a mauris
-							urna. Aenean eleifend nibh tortor, aliquet volutpat ligula eleifend id.
-							Maecenas lacus velit, tincidunt sed quam in, bibendum laoreet tortor.
-							Donec mattis lacus et tristique maximus. Aenean semper, enim non
-							sollicitudin hendrerit, metus augue vehicula ex, eu mattis purus ante
-							eget felis. Curabitur pretium gravida erat, quis tempus orci auctor vel.
-							Praesent vel risus condimentum, molestie arcu vel, commodo leo.
+							Cryptofun allows you to increase and challenge your blockchain
+							knowledge, You have to guess the word correctly at each step using the
+							image's . This word's can include the name of a coin's Or exchanges or
+							expression in cryptos!
+							<br />
+							<b>Let's challenge....</b>
 						</p>
 						<Link className="LoginHeader RobotoMonoBold startGame" to="/login">
 							START GAME
