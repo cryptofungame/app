@@ -7,6 +7,7 @@ import Credit, { setCreditValue } from "./Credit";
 import Send from "../common/send";
 import AllTruncatedFunction from "./truncate";
 import Bag from "../Images/Bag.svg";
+import NEOICON from "../Images/NEO.svg";
 import success from "../Images/success.svg";
 import config from "../common/config";
 
@@ -43,11 +44,19 @@ class Header extends Component {
 		api.neoscan
 			.getBalance("MainNet", user.address)
 			.then(result => {
-				const { NEO, GAS } = result.assets;
-				this.setState({
-					NEO: toBigNumber(NEO.balance).toString(),
-					GAS: toBigNumber(GAS.balance).toString()
-				});
+				// console.log(result);
+				if (result.assets.GAS && result.assets.NEO) {
+					const { GAS, NEO } = result.assets;
+					this.setState({
+						NEO: toBigNumber(NEO.balance).toString(),
+						GAS: toBigNumber(GAS.balance).toString()
+					});
+				} else {
+					this.setState({
+						NEO: 0,
+						GAS: 0
+					});
+				}
 			})
 			.catch(e => {
 				console.log(e);
@@ -73,7 +82,7 @@ class Header extends Component {
 		const UserObject = JSON.parse(localStorage.getItem("User"));
 
 		this.setState({ UserArray: UserObject });
-		const truncatedPrivateKey = AllTruncatedFunction.truncate(UserObject.PrivateKey);
+		const truncatedPrivateKey = AllTruncatedFunction.truncate(UserObject.address);
 		this.setState({
 			truncatedPrivateKey: truncatedPrivateKey.next,
 			truncatedPrivateKeyArray: truncatedPrivateKey
@@ -115,7 +124,6 @@ class Header extends Component {
 				.then(res => {
 					// console.log(res);
 					if (res) {
-						// console.log(res);
 						setCreditValue(res.new_credit);
 						this.setState({
 							Loader: false,
@@ -124,7 +132,7 @@ class Header extends Component {
 						});
 						window.Materialize.toast(res.message, 3000, "red");
 					} else {
-						this.setState({ Loader: false, PaymentComponent: true });
+						this.setState({ Loader: false, PackagesComponent: true });
 						window.Materialize.toast("not enough credit in your wallet", 3000);
 					}
 				})
@@ -164,13 +172,15 @@ class Header extends Component {
 			<Row>
 				<Col m={12} l={12} className="HeaderSectionsContainer">
 					<Col s={12} l={6} m={7} className="HeaderLeftSection NonPadding">
-						<img
+						<img src={NEOICON} alt="NEO" className="ProfilePicture" />
+						{/* <img
 							src={`${this.state.UserArray.avatar}`}
 							alt="avatar"
 							className="ProfilePicture"
-						/>
+						/> */}
 						<p className="RobotoMonoRegular ProfilesDetailText WalletDetailText">
-							Wallet:<br />
+							Wallet:
+							<br />
 							<a className="WalletKey" onClick={this.Toggle}>
 								{this.state.truncatedPrivateKey}
 							</a>
@@ -179,11 +189,13 @@ class Header extends Component {
 							</a>
 						</p>
 						<p className="RobotoMonoRegular ProfilesDetailText NeoText">
-							NEO:<br />
+							NEO:
+							<br />
 							<span>{this.state.NEO}</span>
 						</p>
 						<p className="RobotoMonoRegular ProfilesDetailText GasText">
-							GAS:<br />
+							GAS:
+							<br />
 							<span>{this.state.GAS}</span>
 						</p>
 					</Col>
@@ -194,7 +206,8 @@ class Header extends Component {
 							className="BuyCoinDisplay"
 							trigger={
 								<a className="BuyCoinButton RobotoMedium">
-									<img src={Bag} className="BagIcon" />BUY COINS
+									<img src={Bag} className="BagIcon" />
+									BUY COINS
 								</a>
 							}
 							actions={
@@ -206,7 +219,8 @@ class Header extends Component {
 											onClick={this.BuyCoins}
 											className="BuyCoinButton RobotoMedium"
 										>
-											<img src={Bag} className="BagIcon" />BUY COINS
+											<img src={Bag} className="BagIcon" />
+											BUY COINS
 										</Button>
 									)}
 									<Button
@@ -245,19 +259,20 @@ class Header extends Component {
 
 							{/* PaymentComponent */}
 							{this.state.PaymentComponent === true ? (
-								<div className="">
+								<div className="successModal">
 									<img src={success} className="SucessImage" />
-									<p className="ModalHeader RobotoRegular">
+									<p className="ModalHeader RobotoRegular success">
 										Your payment is successful
 									</p>
 									<p className="ModalText RobotoRegular">
-										Tracking Code:{" "}
+										Tracking Code:
+										<br />
 										<a
 											target="_blank"
 											href={`https://neoscan.io/transaction/${
 												this.state.refId
 											}`}
-											style={{ "word-break": "break-all" }}
+											style={{ wordBreak: "break-all" }}
 										>
 											{this.state.refId}
 										</a>

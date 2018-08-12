@@ -161,7 +161,7 @@ body {
 }
 
 .LevelBox.done {
-	background-image: url(/static/media/Passed.bd53585f.svg);
+	background-image: url(./Images/Passed.svg);
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
 }
@@ -547,16 +547,24 @@ ul#dropdown_1 {
 }
 
 .SucessImage {
-	width: 75px;
+	width: 4rem;
 	display: block;
-	margin-bottom: 20px;
+	margin: 0 auto;
 }
 
 .ModalHeader {
-	/* font-weight: 500; */
+	font-weight: 500;
 	font-size: 1.25em;
-	margin-top: 16px;
+	margin-top: 12px;
 	margin-bottom: 0;
+}
+
+.ModalHeader.success {
+	color: #25ae88 !important;
+}
+
+.ModalHeader.de1d0f {
+	color: #25ae88 !important;
 }
 
 .rodal-dialog ul a {
@@ -863,4 +871,8 @@ ul#dropdown_1 {
 
 .startGame:hover {
 	background: #32632b;
+}
+
+.successModal {
+	text-align: center;
 }

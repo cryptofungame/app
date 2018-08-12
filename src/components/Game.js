@@ -190,7 +190,7 @@ class Game extends Component {
 	}
 
 	back = () => {
-		this.props.history.push("/question");
+		this.props.history.push("/home");
 	};
 
 	CheckAnswer = (event, index) => {
@@ -221,8 +221,7 @@ class Game extends Component {
 
 						// console.log(json);
 					} else {
-						// console.log(json);
-						window.Materialize.toast(json.message, 2000);
+						window.Materialize.toast(json.error, 2000);
 						this.setState({
 							validationError: true,
 							ButtonLoader: false
@@ -261,7 +260,8 @@ class Game extends Component {
 							<Col s={12} l={6} m={7} className="GameNavbarLeftBox NoPadding">
 								<div className="GameLeftNavbarSecion">
 									<a className="BackText RobotoMonoBold" onClick={this.back}>
-										<img src={back} className="BackIcon" />BACK
+										<img src={back} className="BackIcon" />
+										BACK
 									</a>
 									<span className="QuestionNumber RobotoMonoBold">
 										Question #{this.state.questionArray.title}:
@@ -383,9 +383,28 @@ class Game extends Component {
 						header={this.state.showModal.message.toUpperCase()}
 						className="BuyCoinDisplay"
 						actions={
-							<Button modal="close" flat waves="light" className="CancelModalButton">
-								Close
-							</Button>
+							<div>
+								<Button
+									flat
+									waves="light"
+									onClick={() =>
+										this.props.history.push(
+											`/g/${this.state.showModal.message}`
+										)
+									}
+									className="BuyCoinButton RobotoMedium"
+								>
+									NEXT →
+								</Button>
+								<Button
+									modal="close"
+									flat
+									waves="light"
+									className="CancelModalButton"
+								>
+									Close
+								</Button>
+							</div>
 						}
 					>
 						<div className="successAnswer">
@@ -393,8 +412,8 @@ class Game extends Component {
 								src={this.state.showModal.image_source}
 								alt={this.state.showModal.message}
 							/>
-							<a href="eterum.org" target="_blank">
-								eterum.org
+							<a href={this.state.showModal.url} target="_blank">
+								{this.state.showModal.url}
 							</a>
 
 							<p>{this.state.showModal.answer_description}</p>

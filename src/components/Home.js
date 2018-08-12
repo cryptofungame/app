@@ -7,7 +7,6 @@ import { Link, Route, withRouter } from "react-router-dom";
 import Spinner from "./Spinner.js";
 import config from "../common/config.js";
 const colors = new GradientArray();
-
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -60,7 +59,7 @@ class Home extends Component {
 		if (this.state.Loader === true) {
 			return <Spinner />;
 		}
-		const phase1 = colors.gradientList("#BAC8FF", "#4263EB", 100);
+		const phase1 = colors.gradientList("#4263EB", "#4caf50", 80);
 		const AllLevel = this.state.UserQuestionsArray.map(level => {
 			const ConditionalLink = level.level_status === "3" ? Route : Link;
 			return (
@@ -71,14 +70,14 @@ class Home extends Component {
 						}}
 					>
 						<div
-							className={cx("LevelBox", { done: level.status === 1 })}
+							className={cx("LevelBox", { done: level.level_status == 1 })}
 							style={{
 								backgroundColor:
-									level.level_status === "2"
+									level.level_status === "2" || level.level_status === "1"
 										? phase1[level.title - 1]
 										: "#E1E3E6",
 								boxShadow:
-									level.level_status === "2"
+									level.level_status === "2" || level.level_status === "1"
 										? "0 4px 8px 0 rgba(0,0,0,0.17)"
 										: null
 							}}
@@ -87,7 +86,10 @@ class Home extends Component {
 								<p
 									className="LevelBoxNumber RobotoMonoBold"
 									style={{
-										color: level.level_status === "2" ? "#333" : "#A0A6AD"
+										color:
+											level.level_status === "2" || level.level_status === "1"
+												? "#333"
+												: "#A0A6AD"
 									}}
 								>
 									{level.title}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Row, Input, Col } from "react-materialize";
+import { withRouter } from "react-router-dom";
 import { setCreditValue } from "./Credit";
 import Spinner from "./Spinner";
 import Logo from "../Images/logo-green.svg";
@@ -25,7 +26,6 @@ class Login extends Component {
 
 	Login = () => {
 		const User = JSON.parse(localStorage.getItem("User"));
-		// console.log(User);
 		if (this.state.PrivateKey !== "") {
 			this.setState({ Loader: true });
 			// console.log(this.state.PrivateKey);
@@ -56,7 +56,7 @@ class Login extends Component {
 							this.setState({ Loader: false });
 							setCreditValue(json.result.credit);
 
-							// console.log(json);
+							// console.log(this.props);
 							this.props.history.push("/home");
 						} else {
 							// console.log(json);
@@ -90,8 +90,8 @@ class Login extends Component {
 			.then(json => {
 				// console.log(json);
 				this.setState({ PrivateKey: json.private_key, Loader: false });
-				var UserObjects = { PrivateKey: this.state.PrivateKey };
-				localStorage.setItem("User", JSON.stringify(UserObjects));
+				// var UserObjects = { PrivateKey: this.state.PrivateKey };
+				// localStorage.setItem("User", JSON.stringify(UserObjects));
 
 				window.Materialize.toast(
 					"you have been registred please copy and save your private key",
@@ -110,7 +110,7 @@ class Login extends Component {
 			<Row className="body">
 				<div className="LoginBoxContainer">
 					<img src={Logo} className="LoginLogo" alt="Logo" />
-					<p className="LoginHeader RobotoMonoBold">Login to neo Wallet</p>
+					<p className="LoginHeader RobotoMonoBold">Login with NEO wallet</p>
 					{this.state.Loader === false ? (
 						<div className="LoginBox">
 							<Input
@@ -128,18 +128,18 @@ class Login extends Component {
 										onClick={this.Login}
 									>
 										<a>
-											<img src={login} className="LoginIcon" alt="Login" />Login
+											<img src={login} className="LoginIcon" alt="Login" />
+											Login
 										</a>
 									</Button>
 								</Col>
 								<Col s={9} m={8} l={8}>
 									<p className="LoginFooterText">
-										New to NEO?{" "}
 										<a
 											className="LoginSignUpButton RobotoRegular"
 											onClick={this.Register}
 										>
-											Create an account
+											Create account (NEO wallet)
 										</a>
 									</p>
 								</Col>
@@ -156,4 +156,4 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+export default withRouter(Login);

@@ -16,15 +16,15 @@ class App extends Component {
 			<BrowserRouter>
 				<Switch>
 					<Route path="/" exact component={Index} />
-					{/* <Route
-						path="/"
+					<Route
+						path="/login"
 						exact
 						render={({ match }) =>
-							UserObject == null ? <Explore /> : <Redirect to="/home" />
+							UserObject == null ? <Login /> : <Redirect to="/home" />
 						}
-					/> */}
+					/>
 
-					<Route path="/login" component={Login} exact />
+					{/* <Route path="/login" component={Login} exact /> */}
 					<Route path="/g/:id" component={Game} />
 					<Route path="/home" component={Home} />
 					<Route path="/explore" component={Explore} />
