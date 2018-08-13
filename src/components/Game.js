@@ -250,7 +250,6 @@ class Game extends Component {
 			return <Spinner />;
 		}
 
-		// console.log(this.state.values);
 		return (
 			<Row className="MainBody Game">
 				{this.state.UserFound === true ? <Header /> : null}
@@ -265,7 +264,11 @@ class Game extends Component {
 										BACK
 									</a>
 									<span className="QuestionNumber RobotoMonoBold">
-										Question #{this.state.questionArray.title}:
+										Question #
+										{this.props.location.state
+											? this.props.location.state.question
+											: this.state.questionArray.title}
+										:
 									</span>
 								</div>
 							</Col>

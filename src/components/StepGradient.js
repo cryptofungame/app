@@ -85,11 +85,18 @@ export default class GradientArray {
 		return result;
 	}
 
-	gradientList(colorA, colorB, steps) {
-		const colorArray = this.generateGradient(colorA, colorB, steps);
-		return colorArray;
-		// for (let i in colorArray) {
-		// 	console.log(colorArray[i]);
-		// }
+	gradientList(data) {
+		if (Array.isArray(data)) {
+			const colors = [];
+			data.map((item, i) => {
+				const { colorA, colorB, steps } = item;
+				colors[i] = [...this.generateGradient(colorA, colorB, steps)];
+			});
+			return colors.join(",");
+		} else {
+			const { colorA, colorB, steps } = data;
+			const colorArray = this.generateGradient(colorA, colorB, steps);
+			return colorArray;
+		}
 	}
 }

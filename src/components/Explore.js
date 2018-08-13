@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row } from "react-materialize";
+import { Link } from "react-router-dom";
 import Spinner from "./Spinner.js";
 import config from "../common/config.js";
 
@@ -93,38 +94,55 @@ export default class Explorer extends Component {
 			return <Spinner />;
 		}
 		return (
-			<main className="MainBody" style={{ paddingTop: "5vh" }}>
-				<div className="container">
-					<h2>Explorer</h2>
-					<Row>
-						<form onSubmit={this.GetUserFromAddress}>
-							<div className="input-field col s6">
-								<input
-									id="icon_prefix"
-									type="text"
-									className="validate"
-									ref="searchbox"
-								/>
-								<label htmlFor="icon_prefix"># Search Address</label>
-							</div>
-							<div className="col s6">
-								<span className="blue badge" style={{ color: "#fff" }}>
-									Total Users: {users.all_users}
-								</span>
-							</div>
-						</form>
-					</Row>
-					<Row>
-						{users.result ? (
-							<div className="col s12">{userTable}</div>
-						) : (
-							<h3>
-								Address not found! <a onClick={this.GetLeaderboardData}>Back</a>
-							</h3>
-						)}
-					</Row>
-				</div>
-			</main>
+			<div>
+				<nav
+					style={{
+						zIndex: 1000,
+						position: "relative",
+						backgroundColor: "#333"
+					}}
+				>
+					<div className="nav-wrapper" style={{ backgroundColor: "#333" }}>
+						<ul id="nav-mobile" className="right">
+							<li>
+								<Link to="/">Home</Link>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<main className="MainBody" style={{ paddingTop: "2vh" }}>
+					<div className="container">
+						<h2>Explorer</h2>
+						<Row>
+							<form onSubmit={this.GetUserFromAddress}>
+								<div className="input-field col s6">
+									<input
+										id="icon_prefix"
+										type="text"
+										className="validate"
+										ref="searchbox"
+									/>
+									<label htmlFor="icon_prefix"># Search Address</label>
+								</div>
+								<div className="col s6">
+									<span className="blue badge" style={{ color: "#fff" }}>
+										Total Users: {users.all_users}
+									</span>
+								</div>
+							</form>
+						</Row>
+						<Row>
+							{users.result ? (
+								<div className="col s12">{userTable}</div>
+							) : (
+								<h3>
+									Address not found! <a onClick={this.GetLeaderboardData}>Back</a>
+								</h3>
+							)}
+						</Row>
+					</div>
+				</main>
+			</div>
 		);
 	}
 }

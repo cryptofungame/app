@@ -7,6 +7,33 @@ import { Link, Route, withRouter } from "react-router-dom";
 import Spinner from "./Spinner.js";
 import config from "../common/config.js";
 const colors = new GradientArray();
+
+// const levelColors = {
+// 	1:
+// 	2: colors.gradientList("#B2F2BB", "#ABBF2C", 50),
+// 	3: colors.gradientList("#F1CECE", "#FD3D3D", 30)
+// };
+const levelColors = colors
+	.gradientList([
+		{
+			colorA: "#BAC8FF",
+			colorB: "#4263EB",
+			steps: 10
+		},
+		{
+			colorA: "#A6EEDD",
+			colorB: "#EBD935",
+			steps: 50
+		},
+		{
+			colorA: "#F9A7A7",
+			colorB: "#F25246",
+			steps: 20
+		}
+	])
+	.split(",");
+// console.log(levelColors);
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -59,14 +86,15 @@ class Home extends Component {
 		if (this.state.Loader === true) {
 			return <Spinner />;
 		}
-		const phase1 = colors.gradientList("#be82dc", "#4caf50", 80);
-		const AllLevel = this.state.UserQuestionsArray.map(level => {
+		const AllLevel = this.state.UserQuestionsArray.map((level, i) => {
 			const ConditionalLink = level.level_status === "3" ? Route : Link;
+			// console.log(levelColors[level.level_id - 1][i], level.level_id, level.postition);
 			return (
 				<Col key={level.id} l={2} m={3} s={6} className="LevelBoxContainer">
 					<ConditionalLink
 						to={{
-							pathname: `/g/${level.slug}`
+							pathname: `/g/${level.slug}`,
+							state: { question: level.postition }
 						}}
 					>
 						<div
@@ -74,7 +102,8 @@ class Home extends Component {
 							style={{
 								backgroundColor:
 									level.level_status === "2" || level.level_status === "1"
-										? phase1[level.title - 1]
+										? // ? phase1[level.postition - 1]
+										  levelColors[level.postition - 1]
 										: "#E1E3E6",
 								boxShadow:
 									level.level_status === "2" || level.level_status === "1"
