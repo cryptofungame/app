@@ -345,7 +345,7 @@ class Game extends Component {
 										<p className="ModalHeader RobotoRegular">
 											Are you sure to continue?
 											<Badge className="badge red">
-												-{this.state.questionArray.hint_token} TOKENS
+												-{this.state.questionArray.show_token} TOKENS
 											</Badge>
 										</p>
 									</Modal>

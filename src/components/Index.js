@@ -23,7 +23,7 @@ export default class Index extends Component {
 					</div>
 				</nav>
 				<div className="intro">
-					<div className="LoginBoxContainer">
+					<div className="LoginBoxContainer" style={{ marginTop: 0 }}>
 						<img src={Logo} className="BaseLogo" alt="Logo" />
 						<p className="BaseText">
 							Cryptofun allows you to increase and challenge your blockchain

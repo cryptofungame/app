@@ -92,7 +92,7 @@ class Home extends Component {
 												: "#A0A6AD"
 									}}
 								>
-									{level.title}
+									{level.postition}
 								</p>
 							</div>
 						</div>
@@ -105,7 +105,7 @@ class Home extends Component {
 			<main className="MainBody">
 				{this.state.UserFound === true ? <Header /> : null}
 				<div className="BottomGradiant" />
-				<div className="container">
+				<div className="container" style={{ paddingBottom: "12vh" }}>
 					<Row>
 						<p className="LevelsProgress RobotoMonoBold">
 							Progress: {this.state.Progress.solved}/{this.state.Progress.all}

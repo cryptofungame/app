@@ -410,6 +410,7 @@ body {
 	width: 100%;
 	display: block;
 	margin: 0 auto;
+	border-radius: 4px;
 }
 
 .GameNavbarBox {
@@ -435,9 +436,10 @@ body {
 
 .GameInputBox {
 	background: white;
-	margin-top: 10px;
-	padding-top: 15px !important;
-	border-radius: 2px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+	margin-top: 1rem;
+	border-radius: 4px;
+	padding-top: 20px !important;
 	margin-bottom: 60px;
 }
 
@@ -449,20 +451,19 @@ body {
 
 .CheckAnswerButton {
 	display: table;
-	margin: 0 auto;
+	margin: 5vh auto;
 	width: 400px;
 	text-align: center;
 	background-image: linear-gradient(to right, #36CFAB 0%, #05FF9F 100%);
-	box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.12);
-	border-radius: 10px 10px 0 0;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
 	padding: 20px 0px;
 	font-size: 24px;
 	color: #2A2D36;
-	letter-spacing: -1.33px;
+	letter-spacing: -0.05em;
 	cursor: pointer;
 	font-weight: 800;
 	user-select: none;
-	/* transition: background-image 0.5s; */
 }
 
 .CheckAnswerButton:hover {
@@ -872,6 +873,7 @@ ul#dropdown_1 {
 	display: flex;
 	margin-top: -64px;
 	min-height: 100vh;
+	width: 100vw;
 	align-items: center;
 	justify-content: center;
 	z-index: 100;
