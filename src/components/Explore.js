@@ -80,11 +80,11 @@ export default class Explorer extends Component {
 					{users.result &&
 						users.result.map((user, index) => (
 							<tr key={user.id}>
-								<td>{user.rank}</td>
-								<td>
-									<code>{user.address}</code>
+								<td data-head="RANK">{user.rank}</td>
+								<td data-head="Address">
+									<code className="RobotoMonoBold">{user.address}</code>
 								</td>
-								<td>{user.progress}</td>
+								<td data-head="Level">{user.progress}</td>
 							</tr>
 						))}
 				</tbody>

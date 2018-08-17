@@ -2624,3 +2624,24 @@ ul#dropdown_1 {
 		transform: translate3d(0, 0, 2000px);
 	}
 }
+
+table.responsive-table tbody tr:nth-child(even) {
+	background-color: rgba(218, 222, 228, 0.53);
+}
+
+@media only screen and (max-width: 992px) {
+	table.responsive-table thead {
+		display: none;
+	}
+	table.responsive-table tbody tr {
+		padding: 1rem;
+		display: block;
+		border-bottom: 1px solid rgba(212, 214, 216, 0.8);
+	}
+	table.responsive-table tbody tr td:before {
+		content: attr(data-head);
+		float: left;
+		width: 5rem;
+		font-weight: bold;
+	}
+}

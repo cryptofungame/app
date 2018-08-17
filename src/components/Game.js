@@ -207,7 +207,7 @@ class Game extends Component {
 					Authorization: this.state.UserArray.api_token
 				},
 				body: JSON.stringify({
-					answer: this.state.values.join("")
+					answer: this.state.values.join("").toLowerCase()
 				})
 			}).then(response => {
 				response.json().then(json => {
